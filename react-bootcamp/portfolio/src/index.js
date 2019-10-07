@@ -1,12 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from './App'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<App />,document.getElementById('root'));
+
+class Animal{
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+    }
+
+    speak(){
+        console.log("I am "+this.name+" and I am "+this.age+" years old");
+    }
+
+
+}
+
+
+const animal=new Animal("Simbha",13);
+animal.speak();
+
+class Lion extends Animal{
+    constructor(name,age,furColor,speed){
+        super(name,age);
+        this.furColor=furColor;
+        this.speed=speed;
+    }
+
+    roar(){
+        console.log("ROAR!!!My name is "+this.name+" and I am "+this.furColor+" in color");
+    }
+}
+
+
+const lion1=new Lion("poopla",12,"red",428);
+lion1.speak();
+lion1.roar();
